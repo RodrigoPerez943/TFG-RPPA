@@ -1,0 +1,23 @@
+DEPS =  
+SYSROOT = ${CURDIR}/../../env/toolchain/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi/
+
+CFLAGS = -I$(SYSROOT)/usr/include -I. -I../ipc/Bin/ -I./include/ --sysroot=$(SYSROOT) -ftree-vectorize -mvectorize-with-neon-quad -ffast-math  -Wall -g -O0
+#SFLAGS = -mfpu=neon -mfloat-abi=hard -mcpu=cortex-a9
+LFLAGS = -L$(CURDIR)/../ipc/Bin/ -lrt -lpthread -lIPC -lm 
+
+OBJ = ipc_client.o adc.o clk_hi.o clk_lo.o remote_vnahandler_app.o aux_complex.o fft_aux.o s_params.o calib.o string_aux.o calib_mgmt.o client_tcp.o gpio.o pe43650.o #dot_product.o
+
+#%.o: %.s $(DEPS)
+#	  $(AS) $(SFLAGS) -c $< -o $@
+
+%.o: %.c $(DEPS)
+	  $(CC) $(CFLAGS) -fPIC -c $< -o $@
+
+remote_vnahandler_app: $(OBJ)
+	  $(CC) -o remote_vnahandler_app $(CFLAGS) $(OBJ) $(LFLAGS)
+	  rm *.o 
+
+clean:
+	  rm *.o remote_vnahandler_app
+
+

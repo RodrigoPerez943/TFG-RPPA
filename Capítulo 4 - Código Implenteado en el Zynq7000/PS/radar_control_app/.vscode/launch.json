@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: <https://go.microsoft.com/fwlink/?linkid=830387>
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "gdb",
+            "request": "attach",
+            "name": "Debug APU",
+            "gdbpath": "/home/achica/Proyectos/EMDEP/vna6g_linux/env/toolchain/sysroots/x86_64-petalinux-linux/usr/bin/arm-xilinx-linux-gnueabi/arm-xilinx-linux-gnueabi-gdb",
+            "target": "192.168.2.197:9999",
+            "remote": true,
+            "executable": "./remote_vnahandler_app",
+            "cwd": "${workspaceRoot}",
+            "stopAtConnect": true,
+            "setupCommands": [
+                {
+                    "text": "set pagination off",
+                    "ignoreFailures": true,
+                },
+                {
+                    "text": "set non-stop on",
+                    "ignoreFailures": true,
+                }
+            ],
+    
+            "autorun": [
+                "set confirm off",
+                "file ./remote_vnahandler_app"
+            ]
+        },
+        {
+            "name": "Debug",
+            "type": "gdb",
+            "request": "launch",
+            "target": "./remote_vnahandler_app",
+            "cwd": "${workspaceRoot}",
+            "valuesFormatting": "parseText"
+        }    
+    ]
+}

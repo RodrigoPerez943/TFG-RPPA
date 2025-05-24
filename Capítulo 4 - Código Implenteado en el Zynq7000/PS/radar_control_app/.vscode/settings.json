@@ -1,0 +1,30 @@
+{
+    "files.associations": {
+        "calib.h": "c",
+        "time.h": "c",
+        "remote_vnahandler_app.h": "c",
+        "array": "c",
+        "deque": "c",
+        "list": "c",
+        "string": "c",
+        "vector": "c",
+        "iterator": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "unordered_map": "c",
+        "tuple": "c",
+        "adf5355.h": "c",
+        "complex": "c",
+        "pe43650.h": "c",
+        "client_tcp.h": "c",
+        "optional": "c",
+        "istream": "c",
+        "ostream": "c",
+        "ratio": "c",
+        "system_error": "c",
+        "functional": "c",
+        "type_traits": "c",
+        "utility": "c",
+        "clk_hi.h": "c"
+    }
+}

@@ -1,0 +1,58 @@
+{
+  "version": {
+    "major": 1,
+    "minor": 0
+  },
+  "main_interface": {
+    "floating_window": {
+      "is_enable": true
+    },
+    "speaker": {
+      "is_enable_tts": false,
+      "is_enable_voice": false
+    },
+    "widget_list": [
+      {
+        "widget_index": 0,
+        "widget_type": "button",
+        "widget_name": "Confirmar Envío",
+        "icon_file_set": {
+          "icon_file_name_selected": "icon_switch_select.png",
+          "icon_file_name_unselected": "icon_switch_unselect.png"
+        },
+        "customize_rc_buttons_config": {
+          "is_enable": true,
+          "mapping_config_display_order": 0
+        }
+      }
+    ]
+  },
+  "config_interface": {
+    "widget_list": [
+      {
+        "widget_index": 1,
+        "widget_type": "int_input_box",
+        "widget_name": "Ángulo Yaw Límite izquierdo",
+        "int_input_box_hint": "Grados (°)"
+      },
+      {
+        "widget_index": 2,
+        "widget_type": "int_input_box",
+        "widget_name": "Ángulo Yaw Límite derecho",
+        "int_input_box_hint": "Grados (°)"
+      },
+      {
+        "widget_index": 3,
+        "widget_type": "int_input_box",
+        "widget_name": "Velocidad",
+        "int_input_box_hint": "º/s, Máximo 90º/s"
+      },
+      {
+        "widget_index": 4,
+        "widget_type": "int_input_box",
+        "widget_name": "Número de Ciclos",
+        "int_input_box_hint": "Cantidad"
+      }
+    ]
+  }
+}
